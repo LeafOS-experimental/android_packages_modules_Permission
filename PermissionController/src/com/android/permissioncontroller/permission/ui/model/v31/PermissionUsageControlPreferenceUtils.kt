@@ -105,7 +105,7 @@ object PermissionUsageControlPreferenceUtils {
             Manifest.permission_group.MICROPHONE -> {
                 PERMISSION_USAGE_FRAGMENT_INTERACTION__ACTION__MICROPHONE_ACCESS_TIMELINE_VIEWED
             }
-            else -> 0
+            else -> return
         }
         PermissionControllerStatsLog.write(PERMISSION_USAGE_FRAGMENT_INTERACTION, sessionId, act)
     }
