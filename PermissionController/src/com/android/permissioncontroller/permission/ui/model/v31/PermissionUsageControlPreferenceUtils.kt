@@ -60,17 +60,10 @@ object PermissionUsageControlPreferenceUtils {
                 R.string.permission_usage_preference_label, count)
             if (count == 0) {
                 isEnabled = false
-                val permissionUsageSummaryNotUsed = if (
-                        groupName == Manifest.permission_group.NETWORK
-                        || groupName == Manifest.permission_group.OTHER_SENSORS)
-                {
-                    R.string.permission_usage_preference_summary_not_supported
+                val permissionUsageSummaryNotUsed = if (show7Days) {
+                    R.string.permission_usage_preference_summary_not_used_7d
                 } else {
-                    if (show7Days) {
-                        R.string.permission_usage_preference_summary_not_used_7d
-                    } else {
-                        R.string.permission_usage_preference_summary_not_used_24h
-                    }
+                    R.string.permission_usage_preference_summary_not_used_24h
                 }
                 setSummary(permissionUsageSummaryNotUsed)
             } else if (SENSOR_DATA_PERMISSIONS.contains(groupName)) {
