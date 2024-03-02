@@ -108,7 +108,7 @@ suspend fun revokeAppPermissions(
                     !group.isGrantedByDefault &&
                     !group.isGrantedByRole &&
                     !group.isRevokeWhenRequested &&
-                    group.isUserSensitive && !Utils.isSpecialRuntimePermissionGroup(groupName)) {
+                    group.isUserSensitive) {
                     revocableGroups.add(groupName)
                 }
             }
